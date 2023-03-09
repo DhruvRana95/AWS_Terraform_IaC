@@ -1,4 +1,4 @@
-# AWS_Terraform_IaC
+# AWS Terraform IaC Framework (HCL Syntax)
 
 For complete KT go through the below given recorded video session:
 

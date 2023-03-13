@@ -57,3 +57,61 @@ variable "fifo_throughput_limit" {
   default     = "perMessageGroupId"
   type        = string
 }
+
+############################### AWS Lambda ###############################
+
+variable "lambda_function_name" {
+  default     = "tf-sl-lambda"
+  type        = string
+  description = "AWS Lambda Function name value."
+}
+
+variable "lambda_description" {
+  default     = "AWS Lambda to sl-description."
+  type        = string
+  description = "AWS  Lambda Description."
+}
+
+variable "lambda_handler" {
+  default     = "lambda_function.lambda_handler"
+  type        = string
+  description = "AWS Lambda handler value."
+}
+
+variable "lambda_timeout" {
+  default     = 30
+  type        = number
+  description = "AWS Lambda Timeout value."
+}
+
+variable "lambda_memory_size" {
+  default     = 128
+  type        = number
+  description = "AWS Lambda Memory size value."
+}
+
+############################### Lambda S3 BUCKET ###############################
+
+variable "s3_bucket_name" {
+  default     = "sl-artifact-storage-v1"
+  type        = string
+  description = "AWS S3 Bucket name value."
+}
+variable "s3_key" {
+  default     = "lambda-artifacts.zip"
+  type        = string
+  description = "AWS S3 Bucket Key value."
+}
+
+############################### S3 Bucket ###############################
+
+variable "bucket_name" {
+  default = ["sl-static-site-v1", "sl-artifact-storage-v1"]
+  type    = list(any)
+}
+
+variable "acl" {
+  description = "AWS S3 Bucket type value"
+  default     = "private"
+  type        = string
+}

@@ -9,6 +9,10 @@ variable "acl" {
 }
 
 variable "aws_account_id" {
-    description = "AWS Account ID."
-  
+  description = "AWS Account ID."
+}
+
+variable "s3_key" {
+  description = "AWS S3 Bucket Object key value"
+  type        = string
 }

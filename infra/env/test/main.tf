@@ -25,11 +25,16 @@ module "lambda" {
 
   s3_bucket_name = var.s3_bucket_name
   s3_key         = var.s3_key
+  
+  depends_on = [
+    module.sl_bucket
+  ]
 }
 
 module "sl_bucket" {
   source         = "../../modules/S3"
   bucket_name    = var.bucket_name
   acl            = var.acl
+  s3_key         = var.s3_key
   aws_account_id = data.aws_caller_identity.current.account_id
 }
